@@ -1,0 +1,14 @@
+<p> List of tasks:</p>
+<ng-container *ngIf="tasksList.length > 0; else noTasks">
+  <ul>
+    <li *ngFor="let tasks of tasksList">
+      {{tasks}}
+      <button (click)="remove(tasks)">Remove</button>
+      <button (click)="done(tasks)">Done</button>
+
+    </li>
+  </ul>
+</ng-container>
+<ng-template #noTasks>
+  <p>Lack of tasks, GO HOME!!!! </p>
+</ng-template>
